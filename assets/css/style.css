@@ -1,0 +1,231 @@
+body {
+  font-family: "Inter Tight", system-ui;
+  margin: 0;
+  padding: 0;
+  background-color: white; }
+
+p,
+a,
+ul,
+li,
+ol {
+  padding: 0;
+  margin: 0; }
+
+ul {
+  list-style: none; }
+
+/* Links
+--------------------------------------------- */
+a {
+  text-decoration: none;
+  color: #000000; }
+
+a:hover {
+  color: #ffffff; }
+
+a:focus,
+a:active {
+  color: #191970; }
+
+a:hover,
+a:active {
+  outline: 0; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+p {
+  font-family: "Inter Tight", system-ui;
+  font-weight: 400px;
+  font-size: 16px;
+  color: #6D6E76; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  margin: 0; }
+
+h1 {
+  font-size: 70px;
+  line-height: 89px; }
+
+h2 {
+  font-size: 48px;
+  line-height: normal; }
+
+h3 {
+  font-size: 36px;
+  line-height: 48px; }
+
+h4 {
+  font-size: 25px;
+  line-height: normal; }
+
+.btn {
+  padding: 12px 24px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  color: #000000;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  transition: all 0.5s ease-in-out; }
+
+#front_page .navigation {
+  background-color: #232536; }
+  #front_page .navigation header {
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    #front_page .navigation header .site-branding .site-title {
+      font-size: 36px;
+      font-weight: 700;
+      line-height: normal;
+      margin-bottom: 0; }
+      #front_page .navigation header .site-branding .site-title a {
+        color: #ffffff; }
+    #front_page .navigation header #site-navigation {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center; }
+      #front_page .navigation header #site-navigation #header-menu .page_item {
+        padding: 0 21px; }
+        #front_page .navigation header #site-navigation #header-menu .page_item a {
+          font-weight: 500;
+          color: #ffffff;
+          transition: all 0.5s ease-in-out; }
+          #front_page .navigation header #site-navigation #header-menu .page_item a:hover {
+            text-decoration: underline;
+            transition: all 0.5s ease-in-out; }
+      #front_page .navigation header #site-navigation .header-btn {
+        margin-left: 22px; }
+        #front_page .navigation header #site-navigation .header-btn:hover {
+          background-color: #787220;
+          color: #ffffff;
+          transition: all 0.5s ease-in-out; }
+
+.hero-section {
+  padding: 80px 0 40px 0;
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important; }
+  .hero-section .hero-content .title {
+    margin-bottom: 24px; }
+  .hero-section .hero-content .description,
+  .hero-section .hero-content .title {
+    color: #ffffff; }
+  .hero-section .hero-content .btn {
+    margin-top: 24px; }
+    .hero-section .hero-content .btn:hover {
+      background-color: #787220;
+      color: #ffffff;
+      transition: all 0.5s ease-in-out; }
+
+.latest-trending-posts {
+  margin: 100px 0; }
+  .latest-trending-posts .latest-posts h3 {
+    color: #232536; }
+  .latest-trending-posts .latest-posts #post-content {
+    margin-right: 26px; }
+    .latest-trending-posts .latest-posts #post-content .post-item .thumbnail-wrapper {
+      margin-top: 15px; }
+      .latest-trending-posts .latest-posts #post-content .post-item .thumbnail-wrapper img {
+        width: 100%; }
+    .latest-trending-posts .latest-posts #post-content .post-item .writer {
+      margin-top: 24px; }
+      .latest-trending-posts .latest-posts #post-content .post-item .writer p,
+      .latest-trending-posts .latest-posts #post-content .post-item .writer span {
+        color: #4C4C4C;
+        font-size: 14px;
+        font-weight: 500; }
+      .latest-trending-posts .latest-posts #post-content .post-item .writer .author {
+        text-transform: capitalize;
+        color: #FF5959;
+        margin-right: 24px;
+        position: relative; }
+      .latest-trending-posts .latest-posts #post-content .post-item .writer .duration {
+        position: relative; }
+        .latest-trending-posts .latest-posts #post-content .post-item .writer .duration::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 1.5px;
+          height: 12px;
+          background-color: #4C4C4C;
+          margin-left: -12px; }
+    .latest-trending-posts .latest-posts #post-content .post-item .blog-title h3 {
+      font-size: 28px;
+      color: #232536;
+      line-height: 40px;
+      margin-top: 15px;
+      transition: all 0.5s ease-in-out; }
+      .latest-trending-posts .latest-posts #post-content .post-item .blog-title h3:hover {
+        color: #FF5959;
+        transition: all 0.5s ease-in-out; }
+    .latest-trending-posts .latest-posts #post-content .post-item .short-desc p {
+      margin-top: 15px;
+      font-size: 16px;
+      color: #6D6E76;
+      line-height: 28px; }
+      .latest-trending-posts .latest-posts #post-content .post-item .short-desc p a:hover {
+        color: #FF5959;
+        transition: all 0.5s ease-in-out; }
+    .latest-trending-posts .latest-posts #post-content .post-item .short-desc .content {
+      margin-bottom: 15px; }
+    .latest-trending-posts .latest-posts #post-content .post-item .btn {
+      background-color: #FF5959;
+      color: #ffffff; }
+      .latest-trending-posts .latest-posts #post-content .post-item .btn:hover {
+        background-color: #787220;
+        color: #ffffff;
+        transition: all 0.5s ease-in-out; }
+  .latest-trending-posts .trending-posts h3 {
+    color: #232536; }
+  .latest-trending-posts .trending-posts ul {
+    margin-top: 15px; }
+    .latest-trending-posts .trending-posts ul li {
+      list-style: none;
+      padding: 30px;
+      cursor: pointer; }
+      .latest-trending-posts .trending-posts ul li .writer-details {
+        display: flex;
+        align-items: center; }
+        .latest-trending-posts .trending-posts ul li .writer-details p,
+        .latest-trending-posts .trending-posts ul li .writer-details span {
+          color: #4C4C4C;
+          font-size: 14px;
+          font-weight: 500; }
+        .latest-trending-posts .trending-posts ul li .writer-details .author {
+          text-transform: capitalize;
+          color: #FF5959;
+          margin-right: 24px;
+          margin-left: 5px;
+          position: relative; }
+        .latest-trending-posts .trending-posts ul li .writer-details .duration {
+          position: relative; }
+          .latest-trending-posts .trending-posts ul li .writer-details .duration::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1.5px;
+            height: 12px;
+            background-color: #4C4C4C;
+            margin-left: -12px; }
+      .latest-trending-posts .trending-posts ul li .title {
+        font-size: 28px;
+        color: #232536;
+        line-height: 40px;
+        font-weight: 600;
+        letter-spacing: -1px; }
+
+/*# sourceMappingURL=style.css.map */

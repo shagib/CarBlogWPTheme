@@ -1,0 +1,60 @@
+#front_page {
+    .navigation {
+        background-color: $secondary-color;
+
+        header {
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .site-branding {
+                .site-title {
+                    font-size: 36px;
+                    font-weight: 700;
+                    line-height: normal;
+                    margin-bottom: 0;
+
+                    a {
+                        color: $white;
+                    }
+                }
+            }
+
+            #site-navigation {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+
+                #header-menu {
+
+                    .page_item {
+                        padding: 0 21px;
+
+                        a {
+                            font-weight: 500;
+                            color: $white;
+                            transition: all 0.5s ease-in-out;
+
+                            &:hover {
+                                text-decoration: underline;
+                                transition: all 0.5s ease-in-out;
+                            }
+                        }
+                    }
+                }
+
+                .header-btn {
+                    margin-left: 22px;
+
+                    &:hover {
+                        background-color: #787220;
+                        color: $white;
+                        transition: all 0.5s ease-in-out;
+                    }
+                }
+            }
+        }
+    }
+
+}

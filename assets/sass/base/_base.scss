@@ -1,0 +1,47 @@
+body {
+    font-family: $body-font;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+p,
+a,
+ul,
+li,
+ol {
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+
+
+/* Links
+--------------------------------------------- */
+a {
+    text-decoration: none;
+    color: $black;
+}
+
+a:hover {
+    color: $white;
+}
+
+a:focus,
+a:active {
+    color: #191970;
+}
+
+a:hover,
+a:active {
+    outline: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}

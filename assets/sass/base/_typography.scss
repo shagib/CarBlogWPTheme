@@ -1,0 +1,37 @@
+p {
+    font-family: $body-font;
+    font-weight: 400px;
+    font-size: 16px;
+    color: $gray-400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $heading-font;
+    font-weight: 700;
+    margin: 0;
+}
+
+h1 {
+    font-size: 70px;
+    line-height: 89px;
+}
+
+h2 {
+    font-size: 48px;
+    line-height: normal;
+}
+
+h3 {
+    font-size: 36px;
+    line-height: 48px;
+}
+
+h4 {
+    font-size: 25px;
+    line-height: normal;
+}

@@ -1,0 +1,90 @@
+@mixin overlay($bg-color) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $bg-color;
+
+}
+
+
+@mixin css3-prefix($property, $value) {
+    -webkit-#{$property}: #{$value};
+    -khtml-#{$property}: #{$value};
+    -moz-#{$property}: #{$value};
+    -ms-#{$property}: #{$value};
+    -o-#{$property}: #{$value};
+    #{$property}: #{$value};
+}
+
+
+
+// Small devices
+@mixin xs {
+    @media only screen and (min-width: 0px) and (max-width:576px) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media only screen and (min-width: 0px) and (max-width: 767px) {
+        @content;
+    }
+}
+
+// Medium devices
+@mixin md {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+        @content;
+    }
+}
+
+// Large devices
+@mixin lg {
+    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+        @content;
+    }
+}
+
+// Extra large devices
+@mixin xl {
+    @media only screen and (min-width: 1200px) and (max-width: 1399px) {
+        @content;
+    }
+}
+
+// Nest Hub Device
+@mixin nesthub() {
+    @media only screen and (min-width: 992px) and (max-width: 1024px) {
+        @content;
+    }
+}
+
+// Nest Hub Max Device
+@mixin nesthubmax() {
+    @media only screen and (min-width: 1025px) and (max-width: 1280px) {
+        @content;
+    }
+}
+
+
+// // Custom Max Width
+// @mixin rmaxwd($screen) {
+//     @media (max-width: $screen+'px') {
+//         @content;
+//     }
+// }
+
+// // Custom devices
+// @mixin rwd($screen) {
+//     @media (min-width: $screen+'px') {
+//         @content;
+//     }
+// }
+
+
+//transition
+@mixin transition {
+    transition: all 0.5s ease-out;
+}
