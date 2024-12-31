@@ -58,10 +58,13 @@
             </div>
             <div class="col-md-5">
                 <div class="trending-posts">
-                    <h3>Trending Blogs</h3>
+                    <div>
+                        <h3>Trending Blogs</h3>
+                        <a href="" class="show-more">See All</a>
+                    </div>
                     <ul id="blog-titles">
                         <?php 
-                        $trending_posts = new WP_Query(array('posts_per_page' => 5, 'offset' => 1)); 
+                        $trending_posts = new WP_Query(array('posts_per_page' => 3, 'offset' => 1)); 
                         if ($trending_posts->have_posts()) : while ($trending_posts->have_posts()) : $trending_posts->the_post(); ?>
                             <li class="blog-title" data-id="<?php the_ID(); ?>">
                                 <div class="writer-details">
@@ -81,18 +84,31 @@
 
 <section class="category-section">
     <div class="container">
-        <h2>Categories</h2>
-        <div class="categories-grid">
+        <div class="section-title-wrapper">
+            <h4 class="sec-title">All Category </h4>
+        </div>
+        <div class="category-list">
             <?php
-            $categories = get_categories();
-            foreach ($categories as $category) : ?>
+           
+            $categories = get_categories(); 
+            foreach ($categories as $category) :
+                $category_image = get_field('category_image', 'category_' . $category->term_id); 
+                
+            ?>
                 <div class="category-item">
-                    <a href="<?php echo get_category_link($category->term_id); ?>">
+                    <a href="<?php echo get_category_link($category->term_id); ?>" class="category-item">
                         <div class="category-image">
                             <!-- Use dynamic image loading here -->
-                            
+                            <?php 
+                             if ($category_image):
+                                $category_image_url = wp_get_attachment_url($category_image);
+                             ?>
+                                <img src="<?php echo esc_url($category_image_url); ?>" alt="<?php echo esc_attr($category->name); ?>">
+                            <?php endif; ?>           
+
                         </div>
-                        <h3><?php echo $category->name; ?></h3>
+                        <h3 class="cat-name"><?php echo $category->name; ?></h3>
+                        <p class="cat-desc"><?php echo $category->description;?></p>
                     </a>
                 </div>
             <?php endforeach; ?>
@@ -100,33 +116,88 @@
     </div>
 </section>
 
-<section class="featured-section">
+<section class="testimonial-section">
     <div class="container">
-        <h2>New Technology</h2>
-        <div class="posts-grid">
-            <?php
-            $featured_posts = new WP_Query(array('posts_per_page' => 3, 'category_name' => 'technology'));
-            if ($featured_posts->have_posts()) : while ($featured_posts->have_posts()) : $featured_posts->the_post(); ?>
-                <div class="post-item">
-                    <a href="<?php the_permalink(); ?>">
-                        <?php the_post_thumbnail(); ?>
-                        <h3><?php the_title(); ?></h3>
-                    </a>
-                </div>
-            <?php endwhile; endif; wp_reset_postdata(); ?>
+        <div class="testimonial-card-wrapper">
+            <div class="section-heading">
+                <h4 class="subtitle">Testimonials</h4>
+                <h3 class="section-title">What people say about our blog</h3>
+                <p class="desc">See what our readers are saying about our posts.</p>
+            </div>
+            <div class="testimonial-card">
+                <?php
+                $recent_comments = get_comments(array(
+                    'number'      => 1,
+                    'status'      => 'approve',
+                    'type'        => 'comment'
+                ));
+
+                // Check if there are any comments
+                if ($recent_comments) :
+                    foreach ($recent_comments as $comment) :
+                ?>
+                    <div class="visitor-review">
+                        <p class="visitor-review"><?php echo wp_trim_words($comment->comment_content, 25); // Limit to 25 words ?></p>
+                        <div class="visitor-info">
+                            <div class="avatar">
+                                <?php echo get_avatar($comment->comment_author_email, 50); // Display the commenter's avatar ?>
+                            </div>
+                            <div class="visitor-short-info">
+                                <h4 class="author-name"><?php echo esc_html($comment->comment_author); ?></h4>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                    endforeach;
+                else :
+                    echo "<p>No testimonials available yet. Be the first to leave a comment!</p>";
+                endif;
+                ?>
+            
+            </div>
         </div>
     </div>
 </section>
 
-<section class="newsletter-section">
-  <div class="container">
-        <h2>Subscribe to our newsletter</h2>
-        <form action="#">
-            <input type="email" placeholder="Your Email" required />
-            <button type="submit">Subscribe</button>
-        </form>
-  </div>
+
+<section class="blog-section">
+    <div class="container">
+        <div class="blog-wrapper">
+            <div class="section-heading">
+                <h2 class="section-title">New Technology</h2>
+            </div>
+            <div class="blogs-posts">
+                <?php
+                    $featured_posts = new WP_Query(array('posts_per_page' => 4, 'offset' => 1));
+                    if ($featured_posts->have_posts()) :
+                        while ($featured_posts->have_posts()) : $featured_posts->the_post(); ?>
+                            <div class="post-item">
+                                <div class="post-thumbnail">
+                                    <?php the_post_thumbnail('medium'); ?>
+                                </div>
+                                <div class="post-content">
+                                    <a href="<?php the_permalink(); ?>">
+                                        <h3 class="post-title"><?php the_title(); ?></h3>
+                                    </a>
+                                    <div class="writer-details">
+                                        <div class="avatar">
+                                            <?php echo get_avatar(get_the_author_meta('ID'), 40); ?>
+                                        </div>
+                                        <p class="author-info">
+                                            <span class="author-name"><?php echo get_the_author(); ?></span>
+                                            <span class="date">
+                                                <?php echo get_the_date('M j, Y') . '  |  ' . get_post_views(get_the_ID()) . ' Views'; ?>
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                    <?php endwhile; endif; wp_reset_postdata(); ?>
+            </div>
+        </div>
+    </div>
 </section>
+
 
 
 <?php get_footer(); ?>

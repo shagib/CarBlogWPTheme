@@ -10,9 +10,18 @@
  */
 
 ?>
-
+	<section class="newsletter-section">
+		<div class="container">
+			<h2>Subscribe to our newsletter</h2>
+			<form action="#">
+				<input type="email" placeholder="Your Email" required />
+				<button type="submit">Subscribe</button>
+			</form>
+		</div>
+	</section>
 	<footer id="colophon" class="site-footer">
 		<div class="container">
+			
 			<div class="site-info">
 				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'carblog' ) ); ?>">
 					<?php

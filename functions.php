@@ -158,6 +158,7 @@ function carblog_scripts() {
 	wp_enqueue_script( 'carblog-bootstrap', CARBLOG_THEME_JS_DIR.'navigation.js', array(), '5.2.3', true );
 	// wp_enqueue_script( 'carblog-bootstrap', CARBLOG_THEME_JS_DIR.'bootstrap.bundle.min.js', array(), '5.2.3', true );
 	// wp_enqueue_script( 'carblog-slick', CARBLOG_THEME_JS_DIR.'slick.min.js', array(), '1.0.0', true );
+
 	wp_enqueue_script( 'carblog-custom', CARBLOG_THEME_JS_DIR . 'custom.js', array('jquery'), time(), true );
 
     // Localize ajaxurl
@@ -297,6 +298,41 @@ function load_post_content() {
 }
 
 
+// Function to set post views
+function set_post_views($postID) {
+    $count_key = '_post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    
+    if ($count == '') {
+        $count = 0;
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '1'); // Initialize with 1 to count the first view
+    } else {
+        $count++;
+        update_post_meta($postID, $count_key, $count);
+    }
+}
+
+// Function to get post views
+function get_post_views($postID) {
+    $count_key = '_post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if ($count == '') {
+        return "0"; // Return 0 if no views have been counted yet
+    }
+    return $count;
+}
+
+// Function to add view count only for single post views
+function track_post_views($postID) {
+    if (!is_single()) return; // Only count views on single post pages
+    if (empty($postID)) {
+        global $post;
+        $postID = $post->ID;
+    }
+    set_post_views($postID);
+}
+add_action('wp_head', 'track_post_views'); // Hook into wp_head to track views
 
 
 

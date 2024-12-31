@@ -78,6 +78,167 @@ h4 {
   font-weight: 700;
   transition: all 0.5s ease-in-out; }
 
+.category-section .section-title-wrapper {
+  margin-bottom: 35px; }
+  .category-section .section-title-wrapper .sec-title {
+    color: #232536;
+    position: relative;
+    font-weight: 500; }
+    .category-section .section-title-wrapper .sec-title:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 50px;
+      height: 3px;
+      background-color: #000000;
+      margin-left: 40px; }
+.category-section .category-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px; }
+  .category-section .category-list .category-item {
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F4F0F8;
+    border-radius: 10px;
+    padding: 12px; }
+    .category-section .category-list .category-item .category-image {
+      position: relative;
+      width: 90px;
+      height: 90px;
+      border-radius: 50px;
+      margin-bottom: 10px; }
+      .category-section .category-list .category-item .category-image img {
+        width: 90px;
+        height: 90px;
+        border-radius: 50px;
+        object-fit: cover; }
+    .category-section .category-list .category-item .cat-name {
+      font-size: 20px;
+      color: #000000;
+      margin-bottom: 10px; }
+    .category-section .category-list .category-item .cat-desc {
+      font-size: 14px;
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      color: #000000;
+      text-align: center; }
+
+.testimonial-section {
+  background: #232536;
+  padding: 100px 0; }
+  .testimonial-section .testimonial-card-wrapper {
+    display: flex;
+    align-items: center; }
+    .testimonial-section .testimonial-card-wrapper .section-heading {
+      max-width: 400px;
+      width: 100%;
+      padding-right: 70px;
+      font-family: "Poppins", sans-serif;
+      color: #ffffff; }
+      .testimonial-section .testimonial-card-wrapper .section-heading .subtitle {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 12px; }
+      .testimonial-section .testimonial-card-wrapper .section-heading .section-title {
+        letter-spacing: -2px;
+        margin-bottom: 16px; }
+      .testimonial-section .testimonial-card-wrapper .section-heading .desc {
+        color: #ffffff;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        line-height: 28px; }
+    .testimonial-section .testimonial-card-wrapper .testimonial-card {
+      width: 100%;
+      padding: 0 100px;
+      border-left: 1px solid rgba(251, 246, 234, 0.4); }
+      .testimonial-section .testimonial-card-wrapper .testimonial-card .visitor-review .visitor-review {
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 32px;
+        color: #ffffff;
+        margin-bottom: 50px;
+        text-align: center; }
+      .testimonial-section .testimonial-card-wrapper .testimonial-card .visitor-review .visitor-info {
+        display: flex;
+        align-items: center;
+        gap: 15px; }
+        .testimonial-section .testimonial-card-wrapper .testimonial-card .visitor-review .visitor-info .avatar {
+          flex-shrink: 0; }
+          .testimonial-section .testimonial-card-wrapper .testimonial-card .visitor-review .visitor-info .avatar img {
+            border-radius: 50px;
+            overflow: hidden; }
+        .testimonial-section .testimonial-card-wrapper .testimonial-card .visitor-review .visitor-info .visitor-short-info .author-name {
+          font-size: 20px;
+          line-height: 24px;
+          color: #ffffff;
+          text-transform: capitalize; }
+
+.blog-section .blog-wrapper .section-heading {
+  margin-bottom: 35px; }
+  .blog-section .blog-wrapper .section-heading .section-title {
+    position: relative;
+    font-size: 25px;
+    line-height: normal;
+    text-transform: capitalize;
+    color: #232536;
+    font-weight: 500; }
+    .blog-section .blog-wrapper .section-heading .section-title:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 50px;
+      height: 3px;
+      background-color: #000000;
+      margin-left: 40px; }
+.blog-section .blog-wrapper .blogs-posts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px; }
+  .blog-section .blog-wrapper .blogs-posts .post-item {
+    background-color: #F4F0F8;
+    border-radius: 12px;
+    padding: 16px; }
+    .blog-section .blog-wrapper .blogs-posts .post-item .post-thumbnail {
+      height: 200px;
+      margin-bottom: 28px; }
+      .blog-section .blog-wrapper .blogs-posts .post-item .post-thumbnail img {
+        height: 100%;
+        object-fit: cover;
+        border-radius: 12px; }
+    .blog-section .blog-wrapper .blogs-posts .post-item .post-content .post-title {
+      font-size: 18px;
+      line-height: normal;
+      text-transform: capitalize;
+      color: #2B2C34;
+      margin-bottom: 24px; }
+    .blog-section .blog-wrapper .blogs-posts .post-item .post-content .writer-details {
+      display: flex;
+      align-items: center;
+      gap: 12px; }
+      .blog-section .blog-wrapper .blogs-posts .post-item .post-content .writer-details .avatar {
+        flex-shrink: 0; }
+        .blog-section .blog-wrapper .blogs-posts .post-item .post-content .writer-details .avatar img {
+          object-fit: cover;
+          border-radius: 50px; }
+      .blog-section .blog-wrapper .blogs-posts .post-item .post-content .writer-details .author-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; }
+        .blog-section .blog-wrapper .blogs-posts .post-item .post-content .writer-details .author-info .author-name {
+          font-family: "Poppins", sans-serif;
+          font-size: 16px;
+          font-weight: 500;
+          color: #2B2C34;
+          text-transform: capitalize; }
+
 #front_page .navigation {
   background-color: #232536; }
   #front_page .navigation header {
@@ -194,7 +355,7 @@ h4 {
     margin-top: 15px; }
     .latest-trending-posts .trending-posts ul li {
       list-style: none;
-      padding: 30px;
+      padding: 12px 20px;
       cursor: pointer; }
       .latest-trending-posts .trending-posts ul li .writer-details {
         display: flex;
@@ -222,10 +383,13 @@ h4 {
             background-color: #4C4C4C;
             margin-left: -12px; }
       .latest-trending-posts .trending-posts ul li .title {
-        font-size: 28px;
+        font-size: 20px;
         color: #232536;
-        line-height: 40px;
+        line-height: 28px;
         font-weight: 600;
         letter-spacing: -1px; }
+
+.testimonial-section {
+  margin: 100px 0; }
 
 /*# sourceMappingURL=style.css.map */
