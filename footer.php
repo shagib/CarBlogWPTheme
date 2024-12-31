@@ -10,18 +10,18 @@
  */
 
 ?>
-	<section class="newsletter-section">
+	<footer class="site-footer">
 		<div class="container">
-			<h2>Subscribe to our newsletter</h2>
-			<form action="#">
-				<input type="email" placeholder="Your Email" required />
-				<button type="submit">Subscribe</button>
-			</form>
-		</div>
-	</section>
-	<footer id="colophon" class="site-footer">
-		<div class="container">
-			
+			<section class="newsletter-section">
+				
+				<h2>Subscribe to our news letter to get latest updates and news</h2>
+				<form action="#">
+					<input type="email" class="email-field" placeholder="Your Email" required />
+					<input type="submit" class="subscribe-btn" value="Subscribe" />
+				</form>
+				
+			</section>
+	
 			<div class="site-info">
 				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'carblog' ) ); ?>">
 					<?php

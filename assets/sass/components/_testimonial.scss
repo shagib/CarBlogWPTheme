@@ -52,28 +52,64 @@
                     text-align: center;
                 }
 
-                .visitor-info {
+                .visitor-profile {
                     display: flex;
                     align-items: center;
-                    gap: 15px;
+                    justify-content: space-between;
 
                     .avatar {
+                        display: flex;
+                        align-items: center;
+                        gap: 15px;
                         flex-shrink: 0;
 
                         img {
                             border-radius: 50px;
                             overflow: hidden;
                         }
-                    }
 
-                    .visitor-short-info {
-                        .author-name {
-                            font-size: 20px;
-                            line-height: 24px;
-                            color: $white;
-                            text-transform: capitalize;
+                        .visitor-info {
+
+                            .author-name {
+                                font-size: 20px;
+                                line-height: 24px;
+                                color: $white;
+                                text-transform: capitalize;
+                            }
+
+                            .visitor-location {
+                                font-size: 16px;
+                                color: #FBF6EA;
+                                font-weight: 400;
+                                line-height: 28px;
+                            }
                         }
                     }
+
+                    .testimonial-btn {
+                        display: flex;
+                        align-items: center;
+                        gap: 20px;
+
+                        .left-btn,
+                        .right-btn {
+                            width: 48px;
+                            height: 48px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border-radius: 50px;
+                            background-color: $white;
+                            color: $black;
+
+                            &.active {
+                                color: $white;
+                                background-color: $primary-color;
+                            }
+                        }
+                    }
+
+
                 }
             }
         }

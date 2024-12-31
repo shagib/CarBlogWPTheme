@@ -148,7 +148,7 @@ define('CARBLOG_THEME_INC', CARBLOG_THEME_DIR.'/inc/');
 function carblog_scripts() {
 	wp_enqueue_style( 'carblog-fonts', carblog_fonts_url(), array(), '1.0.0' );
 	wp_enqueue_style( 'carblog-bootstrap', CARBLOG_THEME_CSS_DIR.'bootstrap.min.css', array(), '5.2.3' );
-	wp_enqueue_style( 'carblog-fontawesome', CARBLOG_THEME_CSS_DIR.'fontawesome.min.css', array(), '6.4.0' );
+	wp_enqueue_style('fontawesome-cdn', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css', array(), '6.6.0');
 	wp_enqueue_style( 'carblog-slick', CARBLOG_THEME_CSS_DIR.'slick.min.css', array(), '1.0.0' );
 	wp_enqueue_style( 'carblog-main', CARBLOG_THEME_CSS_DIR. 'style.css', array(), time() );
 	wp_style_add_data( 'carblog-style', 'rtl', 'replace' );

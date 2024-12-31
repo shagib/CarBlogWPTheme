@@ -138,13 +138,20 @@
                 ?>
                     <div class="visitor-review">
                         <p class="visitor-review"><?php echo wp_trim_words($comment->comment_content, 25); // Limit to 25 words ?></p>
-                        <div class="visitor-info">
+                        <div class="visitor-profile">
                             <div class="avatar">
                                 <?php echo get_avatar($comment->comment_author_email, 50); // Display the commenter's avatar ?>
+
+                                <div class="visitor-info">
+                                    <h4 class="author-name"><?php echo esc_html($comment->comment_author); ?></h4>
+                                    <div class="visitor-location">New York, USA</div>
+                                </div>
                             </div>
-                            <div class="visitor-short-info">
-                                <h4 class="author-name"><?php echo esc_html($comment->comment_author); ?></h4>
-                            </div>
+                           
+                            <div class="testimonial-btn">
+                                <div class="left-btn"><i class="fa-solid fa-arrow-left-long"></i></div>
+                                <div class="right-btn active"><i class="fa-solid fa-arrow-right-long"></i></div>
+                            </div>                         
                         </div>
                     </div>
                 <?php
