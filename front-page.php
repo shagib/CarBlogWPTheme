@@ -126,41 +126,44 @@
             </div>
             <div class="testimonial-card">
                 <?php
-                $recent_comments = get_comments(array(
-                    'number'      => 1,
-                    'status'      => 'approve',
-                    'type'        => 'comment'
-                ));
-
-                // Check if there are any comments
-                if ($recent_comments) :
-                    foreach ($recent_comments as $comment) :
+                    $recent_comments = get_comments(array(
+                        'number'      => 10,
+                        'status'      => 'approve',
+                        'type'        => 'comment',
+                        // 'user_id'     => 0 
+                    ));
                 ?>
-                    <div class="visitor-review">
-                        <p class="visitor-review"><?php echo wp_trim_words($comment->comment_content, 25); // Limit to 25 words ?></p>
-                        <div class="visitor-profile">
-                            <div class="avatar">
-                                <?php echo get_avatar($comment->comment_author_email, 50); // Display the commenter's avatar ?>
+                <div class="testimonial-slider">
+                <?php 
+                    // Check if there are any comments
+                    if ($recent_comments) :
+                        foreach ($recent_comments as $comment) :
+                    ?>
+                        
+                            <div class="visitor-review">
+                                <p class="visitor-review"><?php echo wp_trim_words($comment->comment_content, 25); // Limit to 25 words ?></p>
+                                <div class="visitor-profile">
+                                    <div class="avatar">
+                                        <?php echo get_avatar($comment->comment_author_email, 50); // Display the commenter's avatar ?>
 
-                                <div class="visitor-info">
-                                    <h4 class="author-name"><?php echo esc_html($comment->comment_author); ?></h4>
-                                    <div class="visitor-location">New York, USA</div>
+                                        <div class="visitor-info">
+                                            <h4 class="author-name"><?php echo esc_html($comment->comment_author); ?></h4>
+                                            <div class="visitor-location">New York, USA</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                           
-                            <div class="testimonial-btn">
-                                <div class="left-btn"><i class="fa-solid fa-arrow-left-long"></i></div>
-                                <div class="right-btn active"><i class="fa-solid fa-arrow-right-long"></i></div>
-                            </div>                         
-                        </div>
-                    </div>
-                <?php
-                    endforeach;
-                else :
-                    echo "<p>No testimonials available yet. Be the first to leave a comment!</p>";
-                endif;
+                    <?php
+                        endforeach;
+                    else :
+                        echo "<p>No testimonials available yet. Be the first to leave a comment!</p>";
+                    endif;
                 ?>
-            
+                </div>
+                <div class="testimonial-btn">
+                    <div class="left-btn"><i class="fa-solid fa-arrow-left-long"></i></div>
+                    <div class="right-btn active"><i class="fa-solid fa-arrow-right-long"></i></div>
+                </div>   
             </div>
         </div>
     </div>

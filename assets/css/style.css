@@ -134,7 +134,6 @@ h4 {
     display: flex;
     align-items: center; }
     .testimonial-section .testimonial-card-wrapper .section-heading {
-      max-width: 400px;
       width: 100%;
       padding-right: 70px;
       font-family: "Poppins", sans-serif;
@@ -155,9 +154,15 @@ h4 {
         font-weight: 400;
         line-height: 28px; }
     .testimonial-section .testimonial-card-wrapper .testimonial-card {
+      position: relative;
       width: 100%;
       padding: 0 100px;
       border-left: 1px solid rgba(251, 246, 234, 0.4); }
+      .testimonial-section .testimonial-card-wrapper .testimonial-card .testimonial-slider {
+        max-width: 692px;
+        width: 100%; }
+        .testimonial-section .testimonial-card-wrapper .testimonial-card .testimonial-slider .slick-dots li button:before {
+          color: #ffffff; }
       .testimonial-section .testimonial-card-wrapper .testimonial-card .visitor-review .visitor-review {
         font-family: "Poppins", sans-serif;
         font-weight: 700;
@@ -188,24 +193,93 @@ h4 {
             color: #FBF6EA;
             font-weight: 400;
             line-height: 28px; }
-        .testimonial-section .testimonial-card-wrapper .testimonial-card .visitor-review .visitor-profile .testimonial-btn {
+      .testimonial-section .testimonial-card-wrapper .testimonial-card .testimonial-btn {
+        position: absolute;
+        bottom: 30px;
+        right: 100px;
+        display: flex;
+        align-items: center;
+        gap: 20px; }
+        .testimonial-section .testimonial-card-wrapper .testimonial-card .testimonial-btn .left-btn,
+        .testimonial-section .testimonial-card-wrapper .testimonial-card .testimonial-btn .right-btn {
+          width: 48px;
+          height: 48px;
           display: flex;
           align-items: center;
-          gap: 20px; }
-          .testimonial-section .testimonial-card-wrapper .testimonial-card .visitor-review .visitor-profile .testimonial-btn .left-btn,
-          .testimonial-section .testimonial-card-wrapper .testimonial-card .visitor-review .visitor-profile .testimonial-btn .right-btn {
-            width: 48px;
-            height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50px;
-            background-color: #ffffff;
-            color: #000000; }
-            .testimonial-section .testimonial-card-wrapper .testimonial-card .visitor-review .visitor-profile .testimonial-btn .left-btn.active,
-            .testimonial-section .testimonial-card-wrapper .testimonial-card .visitor-review .visitor-profile .testimonial-btn .right-btn.active {
-              color: #ffffff;
-              background-color: #FF5959; }
+          justify-content: center;
+          border-radius: 50px;
+          background-color: #ffffff;
+          color: #000000;
+          cursor: pointer; }
+          .testimonial-section .testimonial-card-wrapper .testimonial-card .testimonial-btn .left-btn.active,
+          .testimonial-section .testimonial-card-wrapper .testimonial-card .testimonial-btn .right-btn.active {
+            color: #ffffff;
+            background-color: #FF5959; }
+
+body.blog .hero-section {
+  background-color: #31323C;
+  padding: 20px 0; }
+  body.blog .hero-section .hero-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    body.blog .hero-section .hero-wrapper .section-content {
+      max-width: 600px;
+      width: 100%; }
+      body.blog .hero-section .hero-wrapper .section-content .title {
+        color: #ffffff;
+        font-size: 70px;
+        line-height: 89px;
+        margin-bottom: 20px; }
+      body.blog .hero-section .hero-wrapper .section-content .desc {
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 20px;
+        margin-bottom: 40px; }
+      body.blog .hero-section .hero-wrapper .section-content .subscribe-btn {
+        padding: 16px 30px;
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 48px;
+        background-color: #FF5959;
+        border-radius: 10px; }
+        body.blog .hero-section .hero-wrapper .section-content .subscribe-btn .fa-paper-plane {
+          margin-left: 4px; }
+    body.blog .hero-section .hero-wrapper .feature-image {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
+      position: relative;
+      height: auto; }
+      body.blog .hero-section .hero-wrapper .feature-image .image-collage img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 10px; }
+      body.blog .hero-section .hero-wrapper .feature-image .img-1 {
+        margin-top: 22px;
+        margin-right: 20px;
+        grid-column: 1;
+        grid-row: 1 / span 2;
+        z-index: 1; }
+      body.blog .hero-section .hero-wrapper .feature-image .img-2 {
+        grid-column: 2;
+        grid-row: 1;
+        z-index: 4; }
+      body.blog .hero-section .hero-wrapper .feature-image .img-3 {
+        margin-top: -140px;
+        margin-left: -95px;
+        grid-column: 2;
+        grid-row: 2;
+        z-index: 2; }
+      body.blog .hero-section .hero-wrapper .feature-image .img-4 {
+        margin-top: 78px;
+        margin-left: -90px;
+        grid-column: 3;
+        grid-row: 1 / span 2;
+        z-index: 3; }
 
 .blog-section {
   padding-bottom: 100px; }
@@ -270,7 +344,22 @@ h4 {
 .site-footer {
   padding: 40px 50px;
   background-color: #232536; }
+  .site-footer .footer-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px; }
+    .site-footer .footer-navigation .footer-menu .menu ul {
+      display: flex;
+      align-items: center;
+      gap: 15px; }
+      .site-footer .footer-navigation .footer-menu .menu ul li.page_item a {
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 28px; }
   .site-footer .newsletter-section {
+    margin-bottom: 30px;
     background-color: #2A2B39;
     padding: 80px 40px;
     display: flex;
@@ -304,7 +393,23 @@ h4 {
         padding: 10px 20px;
         color: #FFF;
         font-size: 20px;
-        font-weight: 700; }
+        font-weight: 700;
+        border: none; }
+  .site-footer .site-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    .site-footer .site-info .copyright-text p {
+      color: #FFF;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 28px; }
+    .site-footer .site-info .carblog-social-link {
+      display: flex;
+      align-items: center;
+      gap: 20px; }
+      .site-footer .site-info .carblog-social-link a i {
+        color: #ffffff; }
 
 #front_page .navigation {
   background-color: #232536; }

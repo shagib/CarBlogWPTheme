@@ -50,36 +50,49 @@ jQuery(document).ready(function ($) {
             );
         }
     });
-	
-// 	var $stickySidebar = $(".bd_toc_container"); // Sticky sidebar container
-//     var $tocSection = $(".bd_toc_content_list_item"); // The entire TOC section
 
-//     if ($stickySidebar.length === 0 || $tocSection.length === 0) {
-//         console.error("Sticky sidebar or TOC section not found. Check selectors.");
-//         return;
-//     }
 
-//     function toggleStickyCSS() {
-//         var tocTop = $tocSection.offset().top; // Top position of the TOC section
-//         var tocBottom = tocTop + $tocSection.outerHeight(); // Bottom position of the TOC section
-//         var scrollTop = $(window).scrollTop(); // Current scroll position
-//         var windowHeight = $(window).height();
+    $('.testimonial-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        dots: true,
+        arrows: true,
+        prevArrow: $('.testimonial-btn .left-btn'),
+        nextArrow: $('.testimonial-btn .right-btn')
+    });
 
-//         // Check if the scroll position is within the TOC section
-//         if (scrollTop + windowHeight > tocTop && scrollTop < tocBottom) {
-//             // Show the sticky sidebar when within the TOC section
-//             $stickySidebar.css("visibility", "visible");
-//         } else {
-//             // Hide the sticky sidebar when outside the TOC section
-//             $stickySidebar.css("visibility", "hidden");
-//         }
-//     }
 
-//     // Trigger the toggle function on scroll
-//     $(window).on("scroll", toggleStickyCSS);
+    // 	var $stickySidebar = $(".bd_toc_container"); // Sticky sidebar container
+    //     var $tocSection = $(".bd_toc_content_list_item"); // The entire TOC section
 
-//     // Initial state
-//     toggleStickyCSS();
+    //     if ($stickySidebar.length === 0 || $tocSection.length === 0) {
+    //         console.error("Sticky sidebar or TOC section not found. Check selectors.");
+    //         return;
+    //     }
+
+    //     function toggleStickyCSS() {
+    //         var tocTop = $tocSection.offset().top; // Top position of the TOC section
+    //         var tocBottom = tocTop + $tocSection.outerHeight(); // Bottom position of the TOC section
+    //         var scrollTop = $(window).scrollTop(); // Current scroll position
+    //         var windowHeight = $(window).height();
+
+    //         // Check if the scroll position is within the TOC section
+    //         if (scrollTop + windowHeight > tocTop && scrollTop < tocBottom) {
+    //             // Show the sticky sidebar when within the TOC section
+    //             $stickySidebar.css("visibility", "visible");
+    //         } else {
+    //             // Hide the sticky sidebar when outside the TOC section
+    //             $stickySidebar.css("visibility", "hidden");
+    //         }
+    //     }
+
+    //     // Trigger the toggle function on scroll
+    //     $(window).on("scroll", toggleStickyCSS);
+
+    //     // Initial state
+    //     toggleStickyCSS();
 
 
 

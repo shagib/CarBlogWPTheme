@@ -50,7 +50,7 @@ function carblog_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'carblog' ),
+			'header-menu' => esc_html__( 'Primary', 'carblog' ),
 		)
 	);
 
@@ -149,17 +149,17 @@ function carblog_scripts() {
 	wp_enqueue_style( 'carblog-fonts', carblog_fonts_url(), array(), '1.0.0' );
 	wp_enqueue_style( 'carblog-bootstrap', CARBLOG_THEME_CSS_DIR.'bootstrap.min.css', array(), '5.2.3' );
 	wp_enqueue_style('fontawesome-cdn', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css', array(), '6.6.0');
-	wp_enqueue_style( 'carblog-slick', CARBLOG_THEME_CSS_DIR.'slick.min.css', array(), '1.0.0' );
+	wp_enqueue_style('slick-slider-css', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css', array(), '1.8.1');
+	wp_enqueue_style('slick-slider-theme-css', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css', array('slick-slider-css'), '1.8.1');
 	wp_enqueue_style( 'carblog-main', CARBLOG_THEME_CSS_DIR. 'style.css', array(), time() );
 	wp_style_add_data( 'carblog-style', 'rtl', 'replace' );
 	wp_enqueue_style( 'carblog-style', get_stylesheet_uri() );
 
 
-	wp_enqueue_script( 'carblog-bootstrap', CARBLOG_THEME_JS_DIR.'navigation.js', array(), '5.2.3', true );
-	// wp_enqueue_script( 'carblog-bootstrap', CARBLOG_THEME_JS_DIR.'bootstrap.bundle.min.js', array(), '5.2.3', true );
-	// wp_enqueue_script( 'carblog-slick', CARBLOG_THEME_JS_DIR.'slick.min.js', array(), '1.0.0', true );
 
-	wp_enqueue_script( 'carblog-custom', CARBLOG_THEME_JS_DIR . 'custom.js', array('jquery'), time(), true );
+	wp_enqueue_script( 'carblog-bootstrap', CARBLOG_THEME_JS_DIR.'navigation.js', array(), '5.2.3', true );
+	wp_enqueue_script('slick-slider-js', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', array('jquery'), '1.8.1', true);
+	wp_enqueue_script( 'carblog-custom', CARBLOG_THEME_JS_DIR . 'custom.js', array('jquery', 'slick-slider-js'), time(), true );
 
     // Localize ajaxurl
     wp_localize_script('carblog-custom', 'ajax_vars', array(

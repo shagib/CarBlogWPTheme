@@ -18,9 +18,18 @@ get_header();
 	<main id="primary" class="site-main">
 		<section class="hero-section">
 			<div class="container">
-				<div class="hero-content">
-					<h1>Your Journey, Your Car, Your Way</h1>
-					<p>Explore the latest car trends, news, and stories.</p>
+				<div class="hero-wrapper">
+					<div class="section-content">
+						<h1 class="title">Your Journey, Your Car, Your Way</h1>
+						<p class="desc">Lorem ipsum dolor sit amet consectetur. Diam volutpat morbi elementum vel euismod aliquam. Amet ultrices neque augue consectetur purus phasellus. Ullamcorper lorem montes varius amet vestibulum tellus facilisis consequat pretium. Et faucibus laoreet molestie diam semper fames diam eget.</p>
+						<a href="#" type="btn" class="subscribe-btn">Subscribe<i class="fa-regular fa-paper-plane"></i></a>
+					</div>
+					<div class="feature-image">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/image/car-white-color.jpg" alt="" class="img-1">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/image/car-yellow.jpg" alt="" class="img-2">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/image/car-black.jpg" alt="" class="img-4">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/image/driving.jpg" alt="" class="img-3">
+					</div>
 				</div>
 			</div>
 		</section>

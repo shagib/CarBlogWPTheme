@@ -1,0 +1,93 @@
+body.blog {
+    .hero-section {
+        background-color: #31323C;
+        padding: 20px 0;
+
+        .hero-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .section-content {
+                max-width: 600px;
+                width: 100%;
+
+
+                .title {
+                    color: $white;
+                    font-size: 70px;
+                    line-height: 89px;
+                    margin-bottom: 20px;
+                }
+
+                .desc {
+                    color: $white;
+                    font-size: 18px;
+                    font-weight: 400;
+                    line-height: 20px;
+                    margin-bottom: 40px;
+                }
+
+                .subscribe-btn {
+                    padding: 16px 30px;
+                    color: $white;
+                    font-size: 20px;
+                    font-weight: 700;
+                    line-height: 48px;
+                    background-color: $primary-color;
+                    border-radius: 10px;
+
+                    .fa-paper-plane {
+                        margin-left: 4px;
+                    }
+                }
+            }
+
+            .feature-image {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: auto;
+                position: relative;
+                height: auto;
+
+                .image-collage img {
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                    border-radius: 10px;
+                }
+
+                .img-1 {
+                    margin-top: 22px;
+                    margin-right: 20px;
+                    grid-column: 1;
+                    grid-row: 1 / span 2;
+                    z-index: 1;
+                }
+
+                .img-2 {
+                    grid-column: 2;
+                    grid-row: 1;
+                    z-index: 4;
+                }
+
+                .img-3 {
+                    margin-top: -140px;
+                    margin-left: -95px;
+                    grid-column: 2;
+                    grid-row: 2;
+                    z-index: 2;
+                }
+
+                .img-4 {
+                    margin-top: 78px;
+                    margin-left: -90px;
+                    grid-column: 3;
+                    grid-row: 1 / span 2;
+                    z-index: 3;
+                }
+            }
+
+        }
+    }
+}

@@ -1,4 +1,4 @@
-<?php
+<s?php
 /**
  * The template for displaying the footer
  *
@@ -12,28 +12,33 @@
 ?>
 	<footer class="site-footer">
 		<div class="container">
+			<div class="footer-navigation">
+				<div class="site-logo">
+					<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/image/car-logo.png" alt="CarBlog Logo" /></a>
+                </div>
+				<div class="footer-menu">
+					<?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) );?>
+				</div>
+			</div>
+
 			<section class="newsletter-section">
-				
 				<h2>Subscribe to our news letter to get latest updates and news</h2>
 				<form action="#">
 					<input type="email" class="email-field" placeholder="Your Email" required />
 					<input type="submit" class="subscribe-btn" value="Subscribe" />
 				</form>
-				
 			</section>
 	
 			<div class="site-info">
-				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'carblog' ) ); ?>">
-					<?php
-					/* translators: %s: CMS name, i.e. WordPress. */
-					printf( esc_html__( 'Proudly powered by %s', 'carblog' ), 'WordPress' );
-					?>
-				</a>
-				<span class="sep"> | </span>
-					<?php
-					/* translators: 1: Theme name, 2: Theme author. */
-					printf( esc_html__( 'Theme: %1$s by %2$s.', 'carblog' ), 'carblog', '<a href="http://underscores.me/">Underscores.me</a>' );
-					?>
+				<div class="copyright-text">
+					<p>Copyright ©2024 CarBlog. All Rights Reserved</p>
+				</div>
+				<div class="carblog-social-link">
+					<a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+				</div>
 			</div><!-- .site-info -->
 		</div>
 	</footer><!-- #colophon -->
