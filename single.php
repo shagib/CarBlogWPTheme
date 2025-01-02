@@ -21,12 +21,20 @@
 			<?php endif; ?>
 
 			<!-- Title and Meta -->
-			<div class="post	-header">
-				<h1><?php the_title(); ?></h1>
+			<div class="post-header">
+				<h1 class="post-title"><?php the_title(); ?></h1>
 				<div class="post-meta">
-					<span><?php the_author(); ?></span> |
-					<span><?php the_date(); ?></span> |
-					<span>3 Min Read</span>
+					<div class="writer-details">
+						<div class="avatar">
+							<?php echo get_avatar(get_the_author_meta('ID'), 40); ?>
+						</div>
+						<p class="author-info">
+							<span class="author-name"><?php echo get_the_author(); ?></span>
+							<span class="date">
+								<?php echo get_the_date('M j, Y') . '  |  ' . get_post_views(get_the_ID()) . ' Views'; ?>
+							</span>
+						</p>
+                    </div>
 				</div>
 			</div>
 
