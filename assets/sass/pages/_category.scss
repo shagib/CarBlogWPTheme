@@ -1,0 +1,28 @@
+body.archive,
+body.category {
+    .page-header {
+        .page-title {
+            font-size: 48px;
+        }
+    }
+
+    .type-post {
+        .entry-header {
+            .entry-title {
+                font-size: 38px;
+
+                &:hover {
+                    color: $secondary-color;
+                }
+            }
+        }
+    }
+
+    .carblog-category-single-page {
+        .post-category {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+    }
+}

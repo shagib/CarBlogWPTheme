@@ -63,6 +63,22 @@ jQuery(document).ready(function ($) {
         nextArrow: $('.testimonial-btn .right-btn')
     });
 
+    //sticky header
+    const $navigation = $(".navigation");
+    const navigationHeight = $navigation.outerHeight();
+
+    $(window).on("scroll", function () {
+        if ($(this).scrollTop() > navigationHeight) {
+            if (!$navigation.hasClass("sticky")) {
+                $navigation.addClass("sticky");
+            }
+        } else {
+            if ($navigation.hasClass("sticky")) {
+                $navigation.removeClass("sticky");
+            }
+        }
+    });
+
 
     // 	var $stickySidebar = $(".bd_toc_container"); // Sticky sidebar container
     //     var $tocSection = $(".bd_toc_content_list_item"); // The entire TOC section
