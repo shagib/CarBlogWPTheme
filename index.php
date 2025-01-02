@@ -41,11 +41,29 @@ get_header();
 					<?php
 					if (have_posts()) : while (have_posts()) : the_post(); ?>
 						<div class="post-item">
-							<a href="<?php the_permalink(); ?>">
+							<div class="feature-image">
 								<?php the_post_thumbnail(); ?>
-								<h3><?php the_title(); ?></h3>
-							</a>
-							<p><?php the_excerpt(); ?></p>
+							</div>
+							<div class="blog-content">
+								<a href="<?php the_permalink(); ?>">
+									<h3 class="title"><?php the_title(); ?></h3>
+								</a>
+								<div class="writer-details">
+                                    <div class="avatar">
+                                        <?php echo get_avatar(get_the_author_meta('ID'), 40); ?>
+                                    </div>
+                                    <p class="author-info">
+                                        <span class="author-name"><?php echo get_the_author(); ?></span>
+                                        <span class="date">
+                                            <?php echo get_the_date('M j, Y') . '  |  ' . get_post_views(get_the_ID()) . ' Views'; ?>
+                                        </span>
+                                    </p>
+                                </div>
+								<p class="desc"><?php the_excerpt(); ?></p>
+								<a class="btn read-more" href="<?php the_permalink(); ?>">Read full article...</a>
+							</div>
+							
+							
 						</div>
 					<?php endwhile; endif; ?>
 				</div>
